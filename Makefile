@@ -4,7 +4,8 @@ OBJ_DIR =	./bin/
 SRC_DIR =	./src/
 INC_DIR =	./inc/
 
-SRC =	main.cpp
+SRC =	main.cpp\
+		TypesFabric.cpp
 
 SRC_ENDING = .cpp
 
