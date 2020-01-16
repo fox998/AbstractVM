@@ -4,14 +4,16 @@ OBJ_DIR =	./bin/
 SRC_DIR =	./src/
 INC_DIR =	./inc/
 
-SRC =	main.cpp\
-		TypesFabric.cpp
+SRC =	TypesFabric.cpp\
+		Operand.cpp\
+		main.cpp\
+		VirtualMachine.cpp
 
 SRC_ENDING = .cpp
 
 OBJ = $(addprefix $(OBJ_DIR), $(SRC:$(SRC_ENDING)=.o))
 
-FLAG = -Wextra -Werror -Wall --std=c++17
+FLAG = -Wextra -Werror -Wall -g --std=c++17
 
 COMPILER = g++
 

@@ -10,7 +10,7 @@ class IOperand;
 
 class TypesFabric
 {
-    using OperantVraper = std::unique_ptr<IOperand const>;
+    using OperantVraper = IOperand const* ;// std::unique_ptr<IOperand const>;
 
     OperantVraper createInt8( std::string const & value ) const;
     OperantVraper createInt16( std::string const & value ) const;

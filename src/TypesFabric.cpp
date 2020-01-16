@@ -3,15 +3,13 @@
 #include <assert.h>
 #include <map>
 
-#include "IOperand.hpp"
 #include "Operand.hpp"
-#include "Types.hpp"
-
+//#include "Types.hpp"
 
 #define DECLERE_BUILDER(TYPE)\
 TypesFabric::OperantVraper TypesFabric::create##TYPE( std::string const & value ) const \
 {\
-    return std::make_unique<TYPE>(value); \
+    return new Operand<TYPE>(value);\
 }
 
 DECLERE_BUILDER(Int8);
@@ -25,7 +23,7 @@ TypesFabric::BuilderType TypesFabric::GetBuilder(eOperandType type) const
     assert(type < eOperandType::Count);
 
     #define MAPVALUE(TYPE) std::make_pair(eOperandType::TYPE, &TypesFabric::create##TYPE)
-    const std::map<eOperandType, BuilderType> buildersFunctions = {
+    static const std::map<eOperandType, BuilderType> buildersFunctions = {
         MAPVALUE(Int8),
         MAPVALUE(Int16),
         MAPVALUE(Int32),

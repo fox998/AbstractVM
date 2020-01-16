@@ -1,8 +1,6 @@
 
 #pragma once
 
-#include "Operand.hpp"
-
 enum class eOperandType
 {
     Int8,
@@ -10,13 +8,12 @@ enum class eOperandType
     Int32,
     Float,
     Double,
-    Count
+    Count,
+    Invalid
 };
 
-
-using Int8 = Operand<int8_t>;
-using Int16 = Operand<int16_t>;
-using Int32 = Operand<int32_t>;
-using Float = Operand<float>;
-using Double = Operand<double>;
-
+using Int8 = int8_t;
+using Int16 = int16_t;
+using Int32 = int32_t;
+using Float = float;
+using Double = double;
